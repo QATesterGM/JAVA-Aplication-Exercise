@@ -62,10 +62,6 @@ public class User {
         System.out.println("Użytkownik nazywa się " + firstName + " " + lastName + ", jego mail to " + email + ",a jego wiek to: " + age + " czyli jest pełnoletni: " + isAdult);
     }
 
-    void rozbierajSie() {
-        System.out.println(firstName + " rozbieraj się!");
-    }
-
     // zwraca inta
     int getUserAge() {
         return age;
