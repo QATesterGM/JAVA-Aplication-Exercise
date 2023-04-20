@@ -1,4 +1,12 @@
+package model;
+
 public class User {
+
+    private static int userCounter = 0;
+
+    public static int getUserCounter(){
+        return userCounter;
+    }
 
     // 1. POLA OBIEKTU
     // OPISUJĄ Z CZEGO SKŁADA SIE OBIEKT
@@ -117,11 +125,12 @@ public class User {
         // druga zasada po lewej stronie dajemy nazwy pola obiektu a dopiero przypisujemy im jakas wartosc
     }
 
-    User(String firstName, String lastName, String email, int age) {
+    public User(String firstName, String lastName, String email, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.age = age;
         this.isAdult = isUserAdult();
+        userCounter++;
     }
 }

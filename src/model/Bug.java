@@ -1,3 +1,5 @@
+package model;
+
 public class Bug {
 
     private String bugDescription;
@@ -28,9 +30,16 @@ public class Bug {
         return email;
     }
 
-    public void setEmail(String email) {
-        if (!email.contains("@")) {
+    public void setGmail(String email) {
+
+        if (!email.contains("@") || email.length() < 4) {
             System.out.println("incorrect format mail");
+        } else {
+            this.email = email;
+        }
+
+        if (!email.contains("KK")) {
+            System.out.println("Brakuje litery 'KK' ");
         } else {
             this.email = email;
         }
@@ -60,7 +69,7 @@ public class Bug {
     }
 
     public void showAllBugInfo() {
-        System.out.println("Bug description: " + bugDescription + " email: " + email + " bug priority " + bugPriority
+        System.out.println("model.Bug description: " + bugDescription + " email: " + email + " bug priority " + bugPriority
                 + " bug status: " + bugStatus);
     }
 
@@ -69,11 +78,11 @@ public class Bug {
     }
 
     public void showBusStatus() {
-        System.out.println("Bug status: " + bugStatus);
+        System.out.println("model.Bug status: " + bugStatus);
     }
 
     public void showBugDescription() {
-        System.out.println("Bug description: " + bugDescription);
+        System.out.println("model.Bug description: " + bugDescription);
     }
 
     public int getBugPriority() {

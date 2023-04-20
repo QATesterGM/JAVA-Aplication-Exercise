@@ -1,68 +1,35 @@
+import model.Bug;
+import model.User;
+import utils.StringUtils;
+
 public class MainApp {
 
     public static void main(String[] args) {
 
-        Bug firstBug = new Bug("Bug przy wyswietlaniue sie nowej strony",
-                "gajdalukasz89@o2.pl", 5);
-        int bugPriority = firstBug.getBugPriority();
-        System.out.println(bugPriority);
+        User u1 = new User("Lukasz", "Gajda", "mail321@gmail.com", 34);
+        User u2 = new User("Lukasz", "Gajda", "mail321@gmail.com", 34);
+        User u3 = new User("Lukasz", "Gajda", "mail321@gmail.com", 34);
+        User u4 = new User("Lukasz", "Gajda", "mail321@gmail.com", 34);
 
-        firstBug.showAllBugInfo();
-        firstBug.setEmail("nowymail@89");
-        firstBug.showAllBugInfo();
+        System.out.println(User.getUserCounter());
 
-        Bug secondBug = new Bug("Krótki opis", "gajdalukasz89@o2.pl", 4);
-        secondBug.showAllBugInfo();
-        secondBug.setBugDescription("Opis");
+        System.out.println(u4.getEmail());
 
-        Bug thirdBug = new Bug("Opisfjasomokaokcmsoa", "kup", 6);
-        thirdBug.showBugDescription();
-        thirdBug.setBugDescription("poprawny opis");
-        thirdBug.showBugDescription();
-        thirdBug.setEmail("gumisiowy89@o2.pl");
-        thirdBug.setBugPriority(4);
-        thirdBug.showAllBugInfo();
+        u4.setEmail("Gumisiowy89@o2.pl");
 
-        User lukasz = new User("Łukasz", "Gajda", "gumisiowy89@o2.pl", 71);
-        lukasz.getAllInfo();
-        boolean userAdult = lukasz.isUserAdult();
-        if(userAdult == true){
-            System.out.println("Pełnoletni skurczybyk");
-        }else{
-            System.out.println("Nie jest pełnoletni, to jeszcze dzieciak");
-        }
+        System.out.println(u4.getEmail());
 
-        String str1 = "Hello";
-        String str2 = "hello";
 
-        System.out.println(str1.equals(str2));
-        System.out.println(str1.equalsIgnoreCase(str2));
+        Bug bug1 = new Bug("Jakiś tam bug kurde", "mailsrajl@o2.pl", 5);
 
-        String s = str1.toUpperCase();
-        System.out.println(s);
-        String s1 = str1.toLowerCase();
-        System.out.println(s1);
+        System.out.println(bug1.getEmail());
 
-        boolean startsWith = str1.startsWith("He");
-        System.out.println(startsWith);
-        System.out.println(str1.endsWith("lo"));
-        System.out.println(str1.contains("ll"));
+        bug1.setGmail("d@sdsasdaaKa");
 
-        System.out.println("    ".isBlank()); //ignoruje spacje
-        System.out.println("  ".isEmpty());
+        System.out.println(bug1.getEmail());
 
-        String replace = str1.replace("llo", "QWE");
-        System.out.println(replace);
+        System.out.println(StringUtils.getFormatedText("LukaszTest"));
 
-        String sra = str1.replaceAll("ll", "GG");
-        System.out.println(sra);
-
-        String textWithWhiteSpaces = "   to jest jakiś text    ";
-        System.out.println(textWithWhiteSpaces.length());
-
-        String strip = textWithWhiteSpaces.strip();
-        System.out.println(strip);
-        System.out.println(strip.length());
 
 
     }
