@@ -1,6 +1,7 @@
 import model.Bug;
 import model.User;
 import utils.StringUtils;
+import utils.WeekUtils;
 
 public class MainApp {
 
@@ -30,7 +31,8 @@ public class MainApp {
 
         System.out.println(StringUtils.getFormatedText("LukaszTest"));
 
+        System.out.println(Math.random() + 1);
 
-
+        System.out.println(WeekUtils.MONDAY);
     }
 }
