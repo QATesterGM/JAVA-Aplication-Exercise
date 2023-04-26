@@ -1,5 +1,6 @@
 import model.Bug;
 import model.User;
+import model.computer.Computer;
 import model.computer.Laptop;
 import model.computer.PC;
 import utils.StringUtils;
@@ -37,12 +38,42 @@ public class MainApp {
 //
 //        System.out.println(WeekUtils.MONDAY);
 
-        PC officeComputer = new PC("Office computer", "HP", 500, 128);
-        Laptop gamingLaptop = new Laptop("XGames", "HP Games", 1000, 512);
+        PC officeComputer1 = new PC("Office computer1", "HP", 500, 128);
+        PC officeComputer2 = new PC("Office computer", "HP", 500, 128);
+        PC officeComputer3 = new PC("Office computer", "HP", 500, 128);
+        Laptop gamingLaptop = new Laptop("XGames", "HP Games", 1000, 512, 50);
+        Laptop macbook = new Laptop("XGames", "HP Games", 1000, 512, 50);
 
-        System.out.println(gamingLaptop.getName());
+//        gamingLaptop.setBatteryLevel(75);
+//        gamingLaptop.switchOn();
+//        System.out.println(gamingLaptop.getState());
 
-        gamingLaptop.switchOn();
-        officeComputer.switchOn();
+        System.out.println(officeComputer1.getState());
+        officeComputer1.setPowerSuplly(true);
+        officeComputer1.switchOn();
+        System.out.println(officeComputer1.getState());
+
+        System.out.println(gamingLaptop);
+
+        Computer officeComputer11 = new PC("Office computer11", "HP", 500, 128);
+        Computer officeComputer22 = new PC("Office computer22", "HP", 500, 128);
+        Computer officeComputer33 = new PC("Office computer33", "HP", 500, 128);
+        Computer gamingLaptopX = new Laptop("XGamesPRO", "HP Games", 1000, 512, 50);
+        Computer macbookX = new Laptop("XGames", "HP Games", 1000, 512, 50);
+
+        Computer[] computers = {officeComputer11, officeComputer22, officeComputer33, gamingLaptopX, macbookX};
+
+        for (Computer computer : computers){
+            computer.switchOff();
+        }
+
+        System.out.println(officeComputer33.getState());
+        ((PC) officeComputer33).setPowerSuplly(true);
+        officeComputer33.switchOn();
+        System.out.println(officeComputer33.getState());
+
+
+
+
     }
 }

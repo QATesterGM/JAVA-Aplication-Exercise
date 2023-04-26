@@ -48,11 +48,12 @@ public class Computer {
     }
 
     public void switchOn() {
-        System.out.println("SUPER - Mother class");
+        System.out.println("SUPER - ustawiam pole na true");
         state = true;
     }
 
     public void switchOff() {
+        System.out.println("Wylaczam komputer " + name);
         state = false;
     }
 
