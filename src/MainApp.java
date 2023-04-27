@@ -49,11 +49,13 @@ public class MainApp {
 //        System.out.println(gamingLaptop.getState());
 
         System.out.println(officeComputer1.getState());
-        officeComputer1.setPowerSuplly(true);
+        officeComputer1.setPowerSuplly(false);
         officeComputer1.switchOn();
         System.out.println(officeComputer1.getState());
 
         System.out.println(gamingLaptop);
+
+        //POLIMORFIZM - WIELE FORM
 
         Computer officeComputer11 = new PC("Office computer11", "HP", 500, 128);
         Computer officeComputer22 = new PC("Office computer22", "HP", 500, 128);
@@ -63,7 +65,7 @@ public class MainApp {
 
         Computer[] computers = {officeComputer11, officeComputer22, officeComputer33, gamingLaptopX, macbookX};
 
-        for (Computer computer : computers){
+        for (Computer computer : computers) {
             computer.switchOff();
         }
 
@@ -72,8 +74,20 @@ public class MainApp {
         officeComputer33.switchOn();
         System.out.println(officeComputer33.getState());
 
+        ((PC) officeComputer11).showComputerName(); // RZUTOWANIE na inny typ
 
+        // OBIEKTY dzieci typu MATKA z metodami uruchamianymi metoda abstrakcyjną w MATCE
 
+        Computer nowyPecet = new PC ("Moja nowa maszyna", "Predator",1200, 1024);
+        Computer prywatnaSlluzbowka = new Laptop("Mobilka do gier", "Samsung", 1200, 50, 50);
 
-    }
+        System.out.println(nowyPecet.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+        System.out.println(prywatnaSlluzbowka.volumeUp());
+
+ }
 }
