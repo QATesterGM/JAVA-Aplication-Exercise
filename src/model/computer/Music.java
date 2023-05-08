@@ -7,7 +7,7 @@ public interface Music {
 
     public static final String NAME = "MUSIC";
 
-    // modyfikator dostpepu jest zbędny (redundant), static jest zbędny (redundant), final jest zbędny(redundant)
+    // modyfikator dostpepu jest zbędny (eng. redundant), static jest zbędny (eng. redundant), final jest zbędny(eng. redundant)
     // każda stała domyslenie bedzie publiczna statyczna i finalna
 
     String MUSIC = "Hip-Hop";
@@ -27,7 +27,7 @@ public interface Music {
 
     //4. METODY DOMYSLNE - ZWYKLE METODY
     default void sayHelloFromMusic() {
-        System.out.println("Hello from default"); // metoda nie może miec ciała, jesli chcemy cialo musi być default
+        System.out.println("Hello from default interaface method"); // metoda nie może miec ciała, jesli chcemy cialo musi być default
     }
 
     //5. METODY STATYCZNE
@@ -40,7 +40,7 @@ public interface Music {
     //6. PRYWATNE STATYCZNE METODY
 
     private static void privateMethod(){
-        System.out.println("Hello from private method");
+        System.out.println("Hello from private interface method");
     }
 
 

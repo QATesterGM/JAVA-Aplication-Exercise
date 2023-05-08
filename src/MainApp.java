@@ -76,6 +76,8 @@ public class MainApp {
 
         ((PC) officeComputer11).showComputerName(); // RZUTOWANIE na inny typ
 
+        ((PC) officeComputer22).showComputerName();
+
         // OBIEKTY dzieci typu MATKA z metodami uruchamianymi metoda abstrakcyjną w MATCE
 
         Computer nowyPecet = new PC ("Moja nowa maszyna", "Predator",1200, 1024);
@@ -88,6 +90,10 @@ public class MainApp {
         System.out.println(prywatnaSlluzbowka.volumeUp());
         System.out.println(prywatnaSlluzbowka.volumeUp());
         System.out.println(prywatnaSlluzbowka.volumeUp());
+
+        macbook.playMusic();
+        macbook.sayHelloFromMusic();
+        macbook.sayHelloFromVideo();
 
  }
 }
