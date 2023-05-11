@@ -1,8 +1,7 @@
 import model.Bug;
+import model.BugReporter;
 import model.User;
-import model.computer.Computer;
-import model.computer.Laptop;
-import model.computer.PC;
+import model.computer.*;
 import utils.StringUtils;
 import utils.WeekUtils;
 
@@ -37,63 +36,94 @@ public class MainApp {
 //        System.out.println(Math.random() + 1);
 //
 //        System.out.println(WeekUtils.MONDAY);
-
-        PC officeComputer1 = new PC("Office computer1", "HP", 500, 128);
-        PC officeComputer2 = new PC("Office computer", "HP", 500, 128);
-        PC officeComputer3 = new PC("Office computer", "HP", 500, 128);
-        Laptop gamingLaptop = new Laptop("XGames", "HP Games", 1000, 512, 50);
-        Laptop macbook = new Laptop("XGames", "HP Games", 1000, 512, 50);
-
+//
+//        PC officeComputer1 = new PC("Office computer1", "HP", 500, 128);
+//        PC officeComputer2 = new PC("Office computer", "HP", 500, 128);
+//        PC officeComputer3 = new PC("Office computer", "HP", 500, 128);
+//        Laptop gamingLaptop = new Laptop("XGames", "HP Games", 1000, 512, 50);
+//        Laptop macbook = new Laptop("XGames", "HP Games", 1000, 512, 50);
+//
 //        gamingLaptop.setBatteryLevel(75);
 //        gamingLaptop.switchOn();
 //        System.out.println(gamingLaptop.getState());
+//
+//        System.out.println(officeComputer1.getState());
+//        officeComputer1.setPowerSuplly(false);
+//        officeComputer1.switchOn();
+//        System.out.println(officeComputer1.getState());
+//
+//        System.out.println(gamingLaptop);
+//
+//        //POLIMORFIZM - WIELE FORM
+//
+//        Computer officeComputer11 = new PC("Office computer11", "HP", 500, 128);
+//        Computer officeComputer22 = new PC("Office computer22", "HP", 500, 128);
+//        Computer officeComputer33 = new PC("Office computer33", "HP", 500, 128);
+//        Computer gamingLaptopX = new Laptop("XGamesPRO", "HP Games", 1000, 512, 50);
+//        Computer macbookX = new Laptop("XGames", "HP Games", 1000, 512, 50);
+//
+//        Computer[] computers = {officeComputer11, officeComputer22, officeComputer33, gamingLaptopX, macbookX};
+//
+//        for (Computer computer : computers) {
+//            computer.switchOff();
+//        }
+//
+//        System.out.println(officeComputer33.getState());
+//        ((PC) officeComputer33).setPowerSuplly(true);
+//        officeComputer33.switchOn();
+//        System.out.println(officeComputer33.getState());
+//
+//        ((PC) officeComputer11).showComputerName(); // RZUTOWANIE na inny typ
+//
+//        ((PC) officeComputer22).showComputerName();
+//
+//        // OBIEKTY dzieci typu MATKA z metodami uruchamianymi metoda abstrakcyjną w MATCE
+//
+//        Computer nowyPecet = new PC("Moja nowa maszyna", "Predator", 1200, 1024);
+//        Computer prywatnaSlluzbowka = new Laptop("Mobilka do gier", "Samsung", 1200, 50, 50);
+//
+//        System.out.println(nowyPecet.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//        System.out.println(prywatnaSlluzbowka.volumeUp());
+//
+//        macbook.playMusic();
+//        macbook.sayHelloFromMusic();
+//        macbook.sayHelloFromVideo();
 
-        System.out.println(officeComputer1.getState());
-        officeComputer1.setPowerSuplly(false);
-        officeComputer1.switchOn();
-        System.out.println(officeComputer1.getState());
+//        User lukanio = new User("Łukasz", "Gajda", "gumisiowy89@o2.pl", 34);
+//        User lukanio2 = new User("Łukasz", "Gajda", "gumisiowy89@o2.pl", 34);
+//
+//        System.out.println(lukanio.equals(lukanio2));
 
-        System.out.println(gamingLaptop);
+        //TODO GENEROWANIE OBIEKTÓW ZA POMOCĄ KOMPOZYCJI (budowanie obiektow z innych obiektów
+        //TODO Pierwszy sposob:
 
-        //POLIMORFIZM - WIELE FORM
+        Hdd hdd = new Hdd("Samsung", 500);
+        Ram ram = new Ram("AAA", 128);
 
-        Computer officeComputer11 = new PC("Office computer11", "HP", 500, 128);
-        Computer officeComputer22 = new PC("Office computer22", "HP", 500, 128);
-        Computer officeComputer33 = new PC("Office computer33", "HP", 500, 128);
-        Computer gamingLaptopX = new Laptop("XGamesPRO", "HP Games", 1000, 512, 50);
-        Computer macbookX = new Laptop("XGames", "HP Games", 1000, 512, 50);
+        Computer mac = new Laptop("Mój Mac", "PRO", hdd, ram, 100);
+        System.out.println(mac.getRam().getSize());
 
-        Computer[] computers = {officeComputer11, officeComputer22, officeComputer33, gamingLaptopX, macbookX};
+        //TODO Drugi sposób:
 
-        for (Computer computer : computers) {
-            computer.switchOff();
-        }
+        Computer pc = new PC("Moj Pecet", "Stacjonarny", new Hdd("Krzak", 500), ram);
+        System.out.println(pc.getHdd().getBrand());
 
-        System.out.println(officeComputer33.getState());
-        ((PC) officeComputer33).setPowerSuplly(true);
-        officeComputer33.switchOn();
-        System.out.println(officeComputer33.getState());
+        //TODO ćwiczenie:
 
-        ((PC) officeComputer11).showComputerName(); // RZUTOWANIE na inny typ
+        BugReporter bugReporter = new BugReporter("Buczek", "Znajdek",  "gumisiowy89@o2.pl");
+        Bug bug = new Bug("Cos tam nie dziala", bugReporter, 5);
 
-        ((PC) officeComputer22).showComputerName();
+        System.out.println(bug);
 
-        // OBIEKTY dzieci typu MATKA z metodami uruchamianymi metoda abstrakcyjną w MATCE
+        bug.setBugStatus(true);
 
-        Computer nowyPecet = new PC ("Moja nowa maszyna", "Predator",1200, 1024);
-        Computer prywatnaSlluzbowka = new Laptop("Mobilka do gier", "Samsung", 1200, 50, 50);
+        System.out.println(bug);
 
-        System.out.println(nowyPecet.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
-        System.out.println(prywatnaSlluzbowka.volumeUp());
 
-        macbook.playMusic();
-        macbook.sayHelloFromMusic();
-        macbook.sayHelloFromVideo();
-
- }
+    }
 }
