@@ -2,11 +2,11 @@ package model;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User> {
 
     private static int userCounter = 0;
 
-    public static int getUserCounter(){
+    public static int getUserCounter() {
         return userCounter;
     }
 
@@ -136,6 +136,7 @@ public class User {
         userCounter++;
     }
 
+    //TODO zawsze nadpisuj metode toString equals i hashcode
 
     @Override
     public String toString() {
@@ -163,5 +164,16 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, email, age, isAdult);
+    }
+
+
+    //TODO metoda sluzaca do porównywania obiektów w secie ZAWSZE NADPISYWAC!!! JAK CHCEMY POROWNYWAC OBIEKTY
+    @Override
+    public int compareTo(User o) {
+        int compareResult = this.getFirstName().compareTo(o.getFirstName());
+        if (compareResult == 0) {
+            compareResult = this.getLastName().compareTo(o.getLastName());
+        }
+        return compareResult;
     }
 }

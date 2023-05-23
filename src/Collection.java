@@ -2,6 +2,7 @@ import model.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Collection {
@@ -52,6 +53,13 @@ public class Collection {
         for (User user : users){
             System.out.println(user.getEmail());
         }
+
+        Collections.sort(users, Comparator.comparing(User::getFirstName)); // sortowanie po imieniu, korzystamyz klasy Comparator
+        System.out.println(users);
+
+        Collections.sort(users, Comparator.comparingInt(User::getAge));
+        System.out.println(users);
+
 
 
 
