@@ -28,6 +28,11 @@ public class Ram {
         this.size = size;
     }
 
+    public void wysweitlParametrWStringu(String pierwszyParametr, String drugiParametr){
+        System.out.println(String.format("Wysweitlany string z parametrem pierwszym: " +
+                "[%s] oraz nastepujacym parametrem drugim: [%s]", pierwszyParametr, drugiParametr));
+    }
+
     @Override
     public String toString() {
         return "Ram{" +

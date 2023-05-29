@@ -124,6 +124,8 @@ public class MainApp {
 
         System.out.println(bug);
 
+        ram.wysweitlParametrWStringu("unoParametro", "duoParametro");
+
 
     }
 }
