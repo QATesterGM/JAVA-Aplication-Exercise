@@ -3,7 +3,7 @@ import java.util.List;
 
 public class StreamCollection {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // STREAMY - STRUMIENIE WARTOSCI
 
@@ -28,8 +28,10 @@ public class StreamCollection {
         names.add("Bartek");
         names.add("Antek");
         names.add("Tomek");
+        names.add("Tom");
         names.add("Filip");
         names.add("Romek");
+        names.add("Max");
         names.add("Franek");
         names.add("Artur");
         names.add("Feliks");
@@ -38,7 +40,23 @@ public class StreamCollection {
                 .filter(str -> str.startsWith("F"))
                 .filter(str -> str.contains("k"))
                 .filter(str -> str.endsWith("s"))
-                .forEach(str -> System.out.println(str));
+                .forEach(str -> System.out.println(str));  // jeżeli chcemy cos wyfiltrowac używamy metody 'filter'
+
+        names.stream()
+                .map(str -> str.toUpperCase())
+                .forEach(str -> System.out.println(str));  // jezeli chcemy przeksztalcic wszystkie elementy bedziemy uzywac metody 'map'
+
+        names.stream()
+                .filter(str -> str.length() <= 3)
+                .map(str -> "Short name : " + str)
+                .forEach(str -> System.out.println(str));  // możemy łączyć ze sobą metody filter i map
+
+        long count = names.stream()
+                .filter(str -> str.length() <= 3)
+                .count();
+
+        System.out.println(count);
+
 
     }
 }
