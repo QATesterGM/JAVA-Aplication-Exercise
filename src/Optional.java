@@ -29,11 +29,11 @@ public class Optional {
         // get()
         // isPresent()  zwraca boolean czy wystepuje
         // isEmpty()    zwraca boolean czy jest pusty czy nie
-        // orElse()
-        // orElseGet()
-        // orElseThrow()
-        // ifPresent()
-        // ifPresentOrElse()
+        // orElse()     zwraca jakas inna wartosc
+        // orElseGet()  dostarcza nowy obiekt, jesli szukany nie istnieje
+        // orElseThrow() jezeli nie znajdziemy takiego obiektu to rzucimy wyjatek
+        // ifPresent()   przyjmuje Consumera, wyswietlamy go na konsole
+        // ifPresentOrElse()  dziala podobnie co ifPresent, przyjmuje Consumera, przyjmuje też lamde i wyswietla wartossc na konsole
 
         //System.out.println(max.get());
 
