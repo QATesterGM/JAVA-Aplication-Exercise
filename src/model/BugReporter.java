@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.MineOwnExceptions;
+
 import java.util.Objects;
 
 public class BugReporter {
@@ -34,9 +36,9 @@ public class BugReporter {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws MineOwnExceptions {
         if (!email.contains("@") || email.length() < 4) {
-            System.out.println("incorrect format mail");
+            throw new MineOwnExceptions("incorrect format mail");
         } else {
             this.email = email;
         }

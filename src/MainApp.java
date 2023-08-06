@@ -126,6 +126,9 @@ public class MainApp {
 
         ram.wysweitlParametrWStringu("unoParametro", "duoParametro");
 
+        bugReporter.setEmail("mailNiepoprawnyFormat");  // wyrzucimy wyjątek MineOwnExceptions, bo mamy naszą własną
+        // walidacje w seterze w klasie BugReporter
 
+        //pc.volumeUp();  // wyrzucimy wyjatek UnsupportedOperationException, bo tak mamy zapisane w tym typie obiektu, ktory dziedzicy tą metodę po klasie matce
     }
 }

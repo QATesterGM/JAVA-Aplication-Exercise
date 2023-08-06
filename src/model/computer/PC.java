@@ -19,8 +19,7 @@ public class PC extends Computer {
 
     @Override
     public int volumeUp() {
-        volumeLevel += 1;
-        return volumeLevel;
+        throw new UnsupportedOperationException("Thhis method is not supported for PC");
     }
 
     @Override

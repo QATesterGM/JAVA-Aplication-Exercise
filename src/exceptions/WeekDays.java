@@ -1,4 +1,4 @@
-package enums;
+package exceptions;
 
 public enum WeekDays {
 
